@@ -5,3 +5,7 @@
 .user-name {
   font-family: Merriweather;
 }
+
+.search-user:active{
+  border-width: 0 0 2px 0;
+}

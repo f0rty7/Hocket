@@ -1,31 +1,33 @@
-<div class="nxt-prev-buttons">
-    <button (click)="prevPost()" style="background-color: #fff; border:#fff; font-size: 50px; color: #102d4f; font-weight: bolder; padding-left: 5rem;"> <
+<div class="nxt-prev-buttons" style="width: 15%;display: flex;justify-content: space-between;margin-left: 5rem;margin-top: 0.5rem;margin-bottom: 1rem;">
+    <button (click)="prevPost()" style="background-color: #fff; border:#fff; font-size: 50px; color: #102d4f; font-weight: bolder; "> <
     </button>
-    <button (click)="nextPost()" style="background-color: #fff; border:#fff; font-size: 50px; color: #102d4f; font-weight: bolder; padding-left: 3rem;"> >
+    <button (click)="nextPost()" style="background-color: #fff; border:#fff; font-size: 50px; color: #102d4f; font-weight: bolder; "> >
     </button>
 </div>
 
 <div style="display: flex;">
     <div>
-        <img src="http://lorempixel.com/400/200/business" alt="">
+        <img src="/assets/alt-image.jpeg" alt="http://lorempixel.com/400/200/business">
     </div>
     <div *ngFor="let p of postDisplay" style="margin-left: 1rem;">
-        <h3>{{p.title}}</h3>
-        <p>{{p.body}}</p>
+        <h3 style="font-family: Raleway; margin-top: 0px; color: dimgray;">{{p.title}}</h3>
+        <p style="font-family: Raleway; color: lightslategray;">{{p.body}}</p>
     </div>
 </div>
 
 <div style="display: flex;box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);transition: 0.3s; margin-top: 2rem;">
     <div class="comment-post" style="display: flex; flex-direction: column;width: 50%;">
-        <input type="text" placeholder="enter email here...">
-        <input type="text" placeholder="start typing here...">
-        <button (click)="submitComment()">Submit</button>
+        <input type="text" placeholder="enter email here..." style="margin: 1rem; height: 30px; padding-left: 14px; padding-top: 4px;border-radius: 5px; background-color: #d3d3d342; font-family: Raleway; border-style: solid; border-color: rgb(169, 169, 169);border-width: thin;">
+        <textarea placeholder="start typing here..." style="margin: 0rem 1rem 1rem 1rem; height: 92px; padding-top: 6px; padding-left: 14px; border-radius: 5px; background-color: #d3d3d342; font-family: Raleway; border-style: solid; border-color: rgb(169, 169, 169);border-width: thin;"></textarea>
+        <div style="margin-right: 1rem; display: flex; justify-content: flex-end;">
+            <button (click)="submitComment()" style="width: 25%; background-color: #102d4f; color: #fff; border-radius: 3px; padding: 0.3rem; border-style: none;font-family: Raleway">Submit</button>
+        </div>
     </div>
     <div class="comment-view" style="width: 50%;overflow: scroll;overflow-x: auto;text-align:justify; height: 250px;">
         <div *ngFor="let c of comments" style="overflow: visible;text-align: justify;">
-        <h3>{{c.name}}</h3>
-        <h4>{{c.email}}</h4>
-        <p>{{c.body}}</p>
+        <h4 style="margin-bottom: 0px; font-family: Raleway; color:dimgray">{{c.name}}</h4>
+        <p style="margin: 0px; font-family: Raleway; color: lightslategray;">{{c.email}}</p>
+        <p  style="margin-top: 10px; font-family: Raleway; color: lightslategray;">{{c.body}}</p>
         </div>
     </div>
 </div>
