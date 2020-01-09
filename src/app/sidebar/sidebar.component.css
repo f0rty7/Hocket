@@ -9,3 +9,17 @@
 .search-user:active{
   border-width: 0 0 2px 0;
 }
+
+.input-text {
+  box-sizing: border-box;
+  border: 1px solid #999;
+  padding: 10px;
+}
+
+.input-text--search {
+  background-image: url("/assets/search.svg");
+  background-size: 18px, 50%;
+  background-position: center right 10px, center right 38px;
+  background-repeat: no-repeat;
+  padding-right: 42px; /* Prevents text overlap on the icon */
+}
