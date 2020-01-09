@@ -1,0 +1,7 @@
+.user-name:hover {
+  cursor: pointer;
+}
+
+.user-name {
+  font-family: Merriweather;
+}

@@ -1,0 +1,16 @@
+<div class="wrapper" style="box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);transition: 0.3s;padding: 0 1rem 0 1rem;">
+    <div class="user-search" style="padding-top: 2rem;">
+        <input type=text placeholder="search" style="border-width: 0 0 2px 0;"><span></span>
+    </div>
+    
+    <div class="user-list">
+      <ul *ngFor="let user of users" class="user-list-items" style="padding-left: 0;">
+        <h2 (click)="fetchPostById(user.id)" class="user-name">{{ user.name }}</h2>
+        <ul style="padding-left: 0;">Email</ul>
+        <ul style="padding-left: 0;">{{ user.email }}</ul>
+        <ul style="padding-left: 0;padding-top: 1.5rem;">Website</ul>
+        <ul style="padding-left: 0;">{{ user.website }}</ul>
+      </ul>
+    </div>    
+</div>
+
