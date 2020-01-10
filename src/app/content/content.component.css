@@ -13,3 +13,15 @@ h3::first-letter {
 .button:focus {
   outline: 0;
 }
+
+.comment-view::-webkit-scrollbar {
+  display: none;
+}
+
+.comment-view {
+  padding: 0px 10px;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  overflow: -moz-scrollbars-none;
+}

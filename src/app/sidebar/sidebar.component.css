@@ -1,9 +1,20 @@
 .user-name:hover {
   cursor: pointer;
+  color: #102d4f;
 }
-
+.user-list-items {
+  padding: 10px;
+  border-radius: 3px;
+}
+.user-list-items:hover {
+  box-shadow: inset 0 0 8px 0 rgba(0,0,0,0.2);
+}
+.user-list-items:hover .list-d{
+  display: block;
+}
 .user-name {
   font-family: Merriweather;
+  color: darkgray;
 }
 
 .search-user:active{
@@ -21,7 +32,8 @@
   background-size: 18px, 50%;
   background-position: center right 10px, center right 38px;
   background-repeat: no-repeat;
-  padding-right: 42px;
+  padding-left: 10px;
+  width: 100%;
 }
 
 .input-text--search:hover{
@@ -30,4 +42,7 @@
 
 input:focus{
   outline: 0;
+}
+.list-d {
+  display: none;
 }
