@@ -5,10 +5,10 @@
     
     <div class="user-list">
       <ul *ngFor="let user of users" class="user-list-items" style="padding-left: 0;">
-        <h2 (click)="fetchPostById(user.id)" class="user-name">{{ user.name }}</h2>
-        <ul style="padding-left: 0;font-family: Nunito; color: darkgray; font-weight: 900;">Email</ul>
+        <h2 (click)="fetchPostById(user.id)" class="user-name" style="margin-bottom: 0; color: #102d4f;">{{ user.name }}</h2>
+        <ul style="padding-left: 0;font-family: Nunito; color: darkgray; font-weight: 900;padding-top: 1rem;">Email</ul>
         <ul style="padding-left: 0;font-family: Nunito; color: darkgray;">{{ user.email }}</ul>
-        <ul style="padding-left: 0;padding-top: 1.5rem;font-family: Nunito; color: darkgray; font-weight: 900">Website</ul>
+        <ul style="padding-left: 0;padding-top: 1.5rem;font-family: Nunito; color: darkgray; font-weight: 900;padding-top: 1rem;">Website</ul>
         <ul style="padding-left: 0;font-family: Nunito; color: darkgray;">{{ user.website }}</ul>
       </ul>
     </div>    

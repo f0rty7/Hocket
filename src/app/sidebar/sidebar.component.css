@@ -21,5 +21,13 @@
   background-size: 18px, 50%;
   background-position: center right 10px, center right 38px;
   background-repeat: no-repeat;
-  padding-right: 42px; /* Prevents text overlap on the icon */
+  padding-right: 42px;
+}
+
+.input-text--search:hover{
+  cursor: pointer;
+}
+
+input:focus{
+  outline: 0;
 }

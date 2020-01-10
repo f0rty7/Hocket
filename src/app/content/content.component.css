@@ -5,3 +5,11 @@ p::first-letter {
 h3::first-letter {
   text-transform: uppercase;
 }
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:focus {
+  outline: 0;
+}
