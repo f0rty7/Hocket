@@ -12,12 +12,10 @@ export class AppComponent {
   comments: any;
 
   getPostsPerUser(posts) {
-    console.log({ posts });
     this.posts = posts;
   }
 
   getCommentById(comments) {
     this.comments = comments;
-    console.log({ comments });
   }
 }

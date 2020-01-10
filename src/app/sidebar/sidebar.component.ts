@@ -1,5 +1,4 @@
 import { ApiDataService } from './../api-data.service';
-// import { HttpClient } from "@angular/common/http";
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 
 @Component({
@@ -9,9 +8,6 @@ import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 })
 export class SidebarComponent implements OnInit {
   constructor(private apiService: ApiDataService) {}
-  // userUrl: string = "http://jsonplaceholder.typicode.com/users";
-  // postsUrl: string = "https://jsonplaceholder.typicode.com/posts";
-  // commentsUrl: string = "https://jsonplaceholder.typicode.com/comments";
   users: any = [];
   posts: any = [];
   comments: any = [];
@@ -30,7 +26,6 @@ export class SidebarComponent implements OnInit {
   fetchComments() {
   this.apiService.fetchComments().subscribe((data: []) => {
       this.comments = data;
-      console.log(this.comments);
     })
   }
 
@@ -38,22 +33,18 @@ export class SidebarComponent implements OnInit {
     this.apiService.getUserdetails().subscribe((res: []) => {
       res.sort((a: any, b: any) => (a.name < b.name ? -1 : 1));
       this.users = res;
-      console.log(this.users);
     });
   }
 
   fetchPosts() {
     this.apiService.fetchPosts().subscribe((res: []) => {
       this.posts = res;
-      console.log(this.posts);
     });
   }
 
   fetchPostById(id) {
-    console.log(id);
     this.usersId = id;
     const filtPost = this.posts.filter(post => post.userId === id);
-    console.log(filtPost);
     this.postsPerUser.emit(filtPost);
     this.fetchCommentsById(id);
   }
@@ -61,7 +52,6 @@ export class SidebarComponent implements OnInit {
   fetchCommentsById(id){
     this.usersId = id;
     const filtComment = this.comments.filter(comment =>comment.postId === id);
-    console.log("filetered comments", filtComment);    
     this.commentsPerId.emit(filtComment);
   }
 }
