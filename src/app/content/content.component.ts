@@ -18,7 +18,6 @@ export class ContentComponent implements OnInit{
   }
 
   ngOnChanges() {
-    console.log("Posts in content", this.posts);
     if (this.posts && this.comments) {
       this.postDisplay = [this.posts[0]];
       this.commentDisplay = [this.comments[0]];
