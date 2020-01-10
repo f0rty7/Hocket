@@ -1,4 +1,5 @@
-import { HttpClient } from "@angular/common/http";
+import { ApiDataService } from './../api-data.service';
+// import { HttpClient } from "@angular/common/http";
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 
 @Component({
@@ -7,10 +8,10 @@ import { Component, OnInit, Output, EventEmitter } from "@angular/core";
   styleUrls: ["./sidebar.component.css"]
 })
 export class SidebarComponent implements OnInit {
-  constructor(private http: HttpClient) {}
-  userUrl: string = "http://jsonplaceholder.typicode.com/users";
-  postsUrl: string = "https://jsonplaceholder.typicode.com/posts";
-  commentsUrl: string = "https://jsonplaceholder.typicode.com/comments";
+  constructor(private apiService: ApiDataService) {}
+  // userUrl: string = "http://jsonplaceholder.typicode.com/users";
+  // postsUrl: string = "https://jsonplaceholder.typicode.com/posts";
+  // commentsUrl: string = "https://jsonplaceholder.typicode.com/comments";
   users: any = [];
   posts: any = [];
   comments: any = [];
@@ -27,16 +28,14 @@ export class SidebarComponent implements OnInit {
   }
 
   fetchComments() {
-    const commentsData = this.http.get(this.commentsUrl);
-    commentsData.subscribe((data: []) => {
+  this.apiService.fetchComments().subscribe((data: []) => {
       this.comments = data;
       console.log(this.comments);
     })
   }
 
   getUserdetails() {
-    const resp = this.http.get(this.userUrl);
-    resp.subscribe((res: []) => {
+    this.apiService.getUserdetails().subscribe((res: []) => {
       res.sort((a: any, b: any) => (a.name < b.name ? -1 : 1));
       this.users = res;
       console.log(this.users);
@@ -44,8 +43,7 @@ export class SidebarComponent implements OnInit {
   }
 
   fetchPosts() {
-    const postData = this.http.get(this.postsUrl);
-    postData.subscribe((res: []) => {
+    this.apiService.fetchPosts().subscribe((res: []) => {
       this.posts = res;
       console.log(this.posts);
     });
